@@ -23,6 +23,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
+    
     NSString *tokenAsString = [[[deviceToken description]
                                  stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"< >"]] 
                                 stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -51,6 +52,9 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // Clear notification center
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     NSString* launchUrl = [userInfo valueForKey:@"url"];
     [self.fetchedResultsController insertLink:launchUrl];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
