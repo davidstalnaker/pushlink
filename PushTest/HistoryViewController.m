@@ -35,6 +35,7 @@
     // Set up the edit and add buttons.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.fetchedResultsController.tableView = self.tableView;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
 }
 
 - (void)viewDidUnload
