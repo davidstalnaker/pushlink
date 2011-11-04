@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		637E973F1463B1F8002354CE /* NSURLConnection+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 637E973E1463B1F8002354CE /* NSURLConnection+Blocks.m */; };
 		63ED901B145F2C61009FD1BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED901A145F2C61009FD1BF /* UIKit.framework */; };
 		63ED901D145F2C61009FD1BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED901C145F2C61009FD1BF /* Foundation.framework */; };
 		63ED901F145F2C61009FD1BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED901E145F2C61009FD1BF /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		637E973D1463B1F8002354CE /* NSURLConnection+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Blocks.h"; sourceTree = "<group>"; };
+		637E973E1463B1F8002354CE /* NSURLConnection+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+Blocks.m"; sourceTree = "<group>"; };
 		63ED9016145F2C61009FD1BF /* PushTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ED901A145F2C61009FD1BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63ED901C145F2C61009FD1BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,8 @@
 		63ED9022145F2C61009FD1BF /* PushTest */ = {
 			isa = PBXGroup;
 			children = (
+				637E973D1463B1F8002354CE /* NSURLConnection+Blocks.h */,
+				637E973E1463B1F8002354CE /* NSURLConnection+Blocks.m */,
 				63ED902B145F2C61009FD1BF /* DSAppDelegate.h */,
 				63ED902C145F2C61009FD1BF /* DSAppDelegate.m */,
 				63ED902E145F2C62009FD1BF /* MainStoryboard.storyboard */,
@@ -289,6 +294,7 @@
 				63ED905E145F7A56009FD1BF /* Link.m in Sources */,
 				63ED906114637C2B009FD1BF /* HomeViewController.m in Sources */,
 				63ED9064146384EB009FD1BF /* HistoryFetchedResultsController.m in Sources */,
+				637E973F1463B1F8002354CE /* NSURLConnection+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +464,7 @@
 				63ED9054145F2C62009FD1BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63ED9055145F2C62009FD1BF /* Build configuration list for PBXNativeTarget "PushTestTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +473,7 @@
 				63ED9057145F2C62009FD1BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

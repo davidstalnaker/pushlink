@@ -12,5 +12,6 @@
 @interface HomeViewController : UIViewController
 
 @property(strong, nonatomic) HistoryFetchedResultsController *fetchedResultsController;
+@property(strong, nonatomic) IBOutlet UILabel *passcodeLabel;
 
 @end

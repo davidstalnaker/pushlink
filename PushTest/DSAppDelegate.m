@@ -9,6 +9,7 @@
 #import "DSAppDelegate.h"
 
 #import "HistoryViewController.h"
+#import "NSURLConnection+Blocks.h"
 
 @implementation DSAppDelegate
 
@@ -22,7 +23,26 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	NSLog(@"My token is: %@", deviceToken);
+    NSString *tokenAsString = [[[deviceToken description]
+                                 stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"< >"]] 
+                                stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *myRequestString = [NSString stringWithFormat: @"token=%@", tokenAsString];
+    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://pushlink.david-stalnaker.com/register"]];
+    [request setHTTPMethod: @"POST"];
+    [request setHTTPBody: myRequestData];
+    [NSURLConnection asyncRequest:request
+                          success:^(NSData *data, NSURLResponse *response) {
+                              NSError *error;
+                              NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                              dispatch_async( dispatch_get_main_queue(), ^{
+                                  [self.homeViewController.passcodeLabel setText:(NSString *)[jsonobj objectForKey:@"passcode"]];
+                              });
+                          }
+                          failure:^(NSData *data, NSError *error) {
+                              NSLog(@"Error: %@", error);
+                          }];
+    
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error

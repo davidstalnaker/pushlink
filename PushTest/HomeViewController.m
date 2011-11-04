@@ -11,7 +11,7 @@
 
 @implementation HomeViewController
 
-@synthesize fetchedResultsController;
+@synthesize fetchedResultsController, passcodeLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
