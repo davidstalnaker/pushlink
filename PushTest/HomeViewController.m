@@ -30,6 +30,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [super viewWillAppear:animated];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"viewHistory"]) {

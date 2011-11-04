@@ -47,6 +47,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.fetchedResultsController.tableView = self.tableView;
     [super viewWillAppear:animated];
 }
