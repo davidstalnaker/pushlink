@@ -15,4 +15,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+- (void)insertLink:(NSString *)url;
+- (void)openLink:(NSString *)url;
+
 @end

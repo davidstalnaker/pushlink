@@ -24,6 +24,8 @@
 		63ED9044145F2C62009FD1BF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED9020145F2C61009FD1BF /* CoreData.framework */; };
 		63ED904C145F2C62009FD1BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ED904A145F2C62009FD1BF /* InfoPlist.strings */; };
 		63ED904F145F2C62009FD1BF /* PushTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED904E145F2C62009FD1BF /* PushTestTests.m */; };
+		63ED905E145F7A56009FD1BF /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED905D145F7A56009FD1BF /* Link.m */; };
+		63ED906114637C2B009FD1BF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED906014637C2A009FD1BF /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,24 +44,28 @@
 		63ED901C145F2C61009FD1BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		63ED901E145F2C61009FD1BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		63ED9020145F2C61009FD1BF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		63ED9024145F2C61009FD1BF /* PushTest-Info.plist */ = {isa = PBXFileReference; path = "PushTest-Info.plist"; sourceTree = "<group>"; };
+		63ED9024145F2C61009FD1BF /* PushTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushTest-Info.plist"; sourceTree = "<group>"; };
 		63ED9026145F2C61009FD1BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		63ED9028145F2C61009FD1BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		63ED902A145F2C61009FD1BF /* PushTest-Prefix.pch */ = {isa = PBXFileReference; path = "PushTest-Prefix.pch"; sourceTree = "<group>"; };
-		63ED902B145F2C61009FD1BF /* DSAppDelegate.h */ = {isa = PBXFileReference; path = DSAppDelegate.h; sourceTree = "<group>"; };
+		63ED902A145F2C61009FD1BF /* PushTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushTest-Prefix.pch"; sourceTree = "<group>"; };
+		63ED902B145F2C61009FD1BF /* DSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAppDelegate.h; sourceTree = "<group>"; };
 		63ED902C145F2C61009FD1BF /* DSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAppDelegate.m; sourceTree = "<group>"; };
 		63ED902F145F2C62009FD1BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		63ED9032145F2C62009FD1BF /* PushTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PushTest.xcdatamodel; sourceTree = "<group>"; };
-		63ED9034145F2C62009FD1BF /* DSMasterViewController.h */ = {isa = PBXFileReference; path = DSMasterViewController.h; sourceTree = "<group>"; };
+		63ED9034145F2C62009FD1BF /* DSMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMasterViewController.h; sourceTree = "<group>"; };
 		63ED9035145F2C62009FD1BF /* DSMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMasterViewController.m; sourceTree = "<group>"; };
-		63ED9037145F2C62009FD1BF /* DSDetailViewController.h */ = {isa = PBXFileReference; path = DSDetailViewController.h; sourceTree = "<group>"; };
+		63ED9037145F2C62009FD1BF /* DSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSDetailViewController.h; sourceTree = "<group>"; };
 		63ED9038145F2C62009FD1BF /* DSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSDetailViewController.m; sourceTree = "<group>"; };
 		63ED903F145F2C62009FD1BF /* PushTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ED9040145F2C62009FD1BF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		63ED9049145F2C62009FD1BF /* PushTestTests-Info.plist */ = {isa = PBXFileReference; path = "PushTestTests-Info.plist"; sourceTree = "<group>"; };
+		63ED9049145F2C62009FD1BF /* PushTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushTestTests-Info.plist"; sourceTree = "<group>"; };
 		63ED904B145F2C62009FD1BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		63ED904D145F2C62009FD1BF /* PushTestTests.h */ = {isa = PBXFileReference; path = PushTestTests.h; sourceTree = "<group>"; };
+		63ED904D145F2C62009FD1BF /* PushTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushTestTests.h; sourceTree = "<group>"; };
 		63ED904E145F2C62009FD1BF /* PushTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushTestTests.m; sourceTree = "<group>"; };
+		63ED905C145F7A56009FD1BF /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
+		63ED905D145F7A56009FD1BF /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
+		63ED905F14637C2A009FD1BF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		63ED906014637C2A009FD1BF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +131,15 @@
 				63ED902B145F2C61009FD1BF /* DSAppDelegate.h */,
 				63ED902C145F2C61009FD1BF /* DSAppDelegate.m */,
 				63ED902E145F2C62009FD1BF /* MainStoryboard.storyboard */,
+				63ED905F14637C2A009FD1BF /* HomeViewController.h */,
+				63ED906014637C2A009FD1BF /* HomeViewController.m */,
 				63ED9034145F2C62009FD1BF /* DSMasterViewController.h */,
 				63ED9035145F2C62009FD1BF /* DSMasterViewController.m */,
 				63ED9037145F2C62009FD1BF /* DSDetailViewController.h */,
 				63ED9038145F2C62009FD1BF /* DSDetailViewController.m */,
 				63ED9031145F2C62009FD1BF /* PushTest.xcdatamodeld */,
+				63ED905C145F7A56009FD1BF /* Link.h */,
+				63ED905D145F7A56009FD1BF /* Link.m */,
 				63ED9023145F2C61009FD1BF /* Supporting Files */,
 			);
 			path = PushTest;
@@ -277,6 +287,8 @@
 				63ED9033145F2C62009FD1BF /* PushTest.xcdatamodeld in Sources */,
 				63ED9036145F2C62009FD1BF /* DSMasterViewController.m in Sources */,
 				63ED9039145F2C62009FD1BF /* DSDetailViewController.m in Sources */,
+				63ED905E145F7A56009FD1BF /* Link.m in Sources */,
+				63ED906114637C2B009FD1BF /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

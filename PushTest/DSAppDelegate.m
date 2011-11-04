@@ -13,16 +13,39 @@
 @implementation DSAppDelegate
 
 @synthesize window = _window;
+@synthesize navController = _navController;
+@synthesize masterViewController = _masterViewController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+	NSLog(@"My token is: %@", deviceToken);
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSString* launchUrl = [userInfo valueForKey:@"url"];
+    [self.masterViewController insertLink:launchUrl];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    DSMasterViewController *controller = (DSMasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    self.navController = (UINavigationController *)self.window.rootViewController;
+    self.masterViewController = (DSMasterViewController *)self.navController.topViewController;
+    self.masterViewController.managedObjectContext = self.managedObjectContext;
+    
+    // Let the device know we want to receive push notifications
+	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
     return YES;
 }
 							
