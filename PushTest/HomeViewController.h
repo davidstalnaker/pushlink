@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HistoryFetchedResultsController.h"
 
 @interface HomeViewController : UIViewController
 
-@property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property(strong, nonatomic) HistoryFetchedResultsController *fetchedResultsController;
 
 @end

@@ -14,10 +14,11 @@
 
 @synthesize window = _window;
 @synthesize navController = _navController;
-@synthesize historyViewController = _masterViewController;
+@synthesize homeViewController = _masterViewController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize fetchedResultsController = __fetchedResultsController;
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
@@ -31,16 +32,18 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSString* launchUrl = [userInfo valueForKey:@"url"];
-    [self.historyViewController insertLink:launchUrl];
+    [self.fetchedResultsController insertLink:launchUrl];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     // Override point for customization after application launch.
     self.navController = (UINavigationController *)self.window.rootViewController;
-    self.historyViewController = (HistoryViewController *)self.navController.topViewController;
-    self.historyViewController.managedObjectContext = self.managedObjectContext;
+    self.homeViewController = (HomeViewController *)self.navController.topViewController;
+    self.fetchedResultsController = [[HistoryFetchedResultsController alloc] initWithManagedObjectContext:self.managedObjectContext];
+    self.homeViewController.fetchedResultsController = self.fetchedResultsController;
     
     // Let the device know we want to receive push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:

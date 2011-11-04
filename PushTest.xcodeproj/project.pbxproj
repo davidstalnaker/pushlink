@@ -25,6 +25,7 @@
 		63ED904F145F2C62009FD1BF /* PushTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED904E145F2C62009FD1BF /* PushTestTests.m */; };
 		63ED905E145F7A56009FD1BF /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED905D145F7A56009FD1BF /* Link.m */; };
 		63ED906114637C2B009FD1BF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED906014637C2A009FD1BF /* HomeViewController.m */; };
+		63ED9064146384EB009FD1BF /* HistoryFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ED9063146384EB009FD1BF /* HistoryFetchedResultsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		63ED905D145F7A56009FD1BF /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
 		63ED905F14637C2A009FD1BF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		63ED906014637C2A009FD1BF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		63ED9062146384EA009FD1BF /* HistoryFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryFetchedResultsController.h; sourceTree = "<group>"; };
+		63ED9063146384EB009FD1BF /* HistoryFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryFetchedResultsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				63ED906014637C2A009FD1BF /* HomeViewController.m */,
 				63ED9034145F2C62009FD1BF /* HistoryViewController.h */,
 				63ED9035145F2C62009FD1BF /* HistoryViewController.m */,
+				63ED9062146384EA009FD1BF /* HistoryFetchedResultsController.h */,
+				63ED9063146384EB009FD1BF /* HistoryFetchedResultsController.m */,
 				63ED9031145F2C62009FD1BF /* PushTest.xcdatamodeld */,
 				63ED905C145F7A56009FD1BF /* Link.h */,
 				63ED905D145F7A56009FD1BF /* Link.m */,
@@ -283,6 +288,7 @@
 				63ED9036145F2C62009FD1BF /* HistoryViewController.m in Sources */,
 				63ED905E145F7A56009FD1BF /* Link.m in Sources */,
 				63ED906114637C2B009FD1BF /* HomeViewController.m in Sources */,
+				63ED9064146384EB009FD1BF /* HistoryFetchedResultsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <CoreData/CoreData.h>
+#import "HistoryFetchedResultsController.h"
 
-@interface HistoryViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface HistoryViewController : UITableViewController
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) HistoryFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-- (void)insertLink:(NSString *)url;
-- (void)openLink:(NSString *)url;
 
 @end

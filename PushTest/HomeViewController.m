@@ -11,7 +11,7 @@
 
 @implementation HomeViewController
 
-@synthesize managedObjectContext;
+@synthesize fetchedResultsController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +33,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"viewHistory"]) {
-        ((HistoryViewController*)[segue destinationViewController]).managedObjectContext = self.managedObjectContext;
+        ((HistoryViewController*)[segue destinationViewController]).fetchedResultsController = self.fetchedResultsController;
     }
 }
 

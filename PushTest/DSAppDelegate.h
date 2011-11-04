@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HistoryViewController.h"
+#import "HomeViewController.h"
+#import "HistoryFetchedResultsController.h"
 
 @interface DSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navController;
-@property (strong, nonatomic) HistoryViewController *historyViewController;
+@property (strong, nonatomic) HomeViewController *homeViewController;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (strong, nonatomic) HistoryFetchedResultsController *fetchedResultsController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
