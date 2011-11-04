@@ -8,13 +8,13 @@
 
 #import "DSAppDelegate.h"
 
-#import "DSMasterViewController.h"
+#import "HistoryViewController.h"
 
 @implementation DSAppDelegate
 
 @synthesize window = _window;
 @synthesize navController = _navController;
-@synthesize masterViewController = _masterViewController;
+@synthesize historyViewController = _masterViewController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -31,7 +31,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSString* launchUrl = [userInfo valueForKey:@"url"];
-    [self.masterViewController insertLink:launchUrl];
+    [self.historyViewController insertLink:launchUrl];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
 }
 
@@ -39,8 +39,8 @@
 {
     // Override point for customization after application launch.
     self.navController = (UINavigationController *)self.window.rootViewController;
-    self.masterViewController = (DSMasterViewController *)self.navController.topViewController;
-    self.masterViewController.managedObjectContext = self.managedObjectContext;
+    self.historyViewController = (HistoryViewController *)self.navController.topViewController;
+    self.historyViewController.managedObjectContext = self.managedObjectContext;
     
     // Let the device know we want to receive push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:

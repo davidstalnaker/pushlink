@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "DSMasterViewController.h"
+#import "HistoryViewController.h"
 
 @implementation HomeViewController
 
@@ -33,7 +33,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"viewHistory"]) {
-        ((DSMasterViewController*)[segue destinationViewController]).managedObjectContext = self.managedObjectContext;
+        ((HistoryViewController*)[segue destinationViewController]).managedObjectContext = self.managedObjectContext;
     }
 }
 
