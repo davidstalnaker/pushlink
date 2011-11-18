@@ -1,14 +1,14 @@
 //
-//  PushTestTests.m
-//  PushTestTests
+//  PushLinkTests.m
+//  PushLinkTests
 //
 //  Created by David Stalnaker on 10/31/11.
 //  Copyright (c) 2011 Rochester Institute of Technology. All rights reserved.
 //
 
-#import "PushTestTests.h"
+#import "PushLinkTests.h"
 
-@implementation PushTestTests
+@implementation PushLinkTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in PushTestTests");
+    STFail(@"Unit tests are not implemented yet in PushLinkTests");
 }
 
 @end

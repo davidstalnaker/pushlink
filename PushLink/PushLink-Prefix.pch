@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'PushTest' target in the 'PushTest' project
+// Prefix header for all source files of the 'PushLink' target in the 'PushLink' project
 //
 
 #import <Availability.h>

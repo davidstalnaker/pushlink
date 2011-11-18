@@ -1,8 +1,8 @@
 //
 //  Link.h
-//  PushTest
+//  PushLink
 //
-//  Created by David Stalnaker on 10/31/11.
+//  Created by David Stalnaker on 11/18/11.
 //  Copyright (c) 2011 Rochester Institute of Technology. All rights reserved.
 //
 
