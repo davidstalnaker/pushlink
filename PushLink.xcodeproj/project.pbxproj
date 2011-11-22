@@ -22,8 +22,8 @@
 		63950098147721AA002F53AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63950093147721AA002F53AF /* InfoPlist.strings */; };
 		63950099147721AA002F53AF /* PushLinkTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63950095147721AA002F53AF /* PushLinkTests-Info.plist */; };
 		6395009A147721AA002F53AF /* PushTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63950097147721AA002F53AF /* PushTestTests.m */; };
-		6399BF92147B5D9E00425CA4 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6399BF91147B5D9E00425CA4 /* Icon-114.png */; };
-		6399BF95147C479800425CA4 /* Icon.acorn in Resources */ = {isa = PBXBuildFile; fileRef = 6399BF94147C479800425CA4 /* Icon.acorn */; };
+		6399BF99147C61C500425CA4 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6399BF97147C61C500425CA4 /* Icon-114.png */; };
+		6399BF9A147C61C500425CA4 /* Icon.acorn in Resources */ = {isa = PBXBuildFile; fileRef = 6399BF98147C61C500425CA4 /* Icon.acorn */; };
 		63ED901B145F2C61009FD1BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED901A145F2C61009FD1BF /* UIKit.framework */; };
 		63ED901D145F2C61009FD1BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED901C145F2C61009FD1BF /* Foundation.framework */; };
 		63ED901F145F2C61009FD1BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ED901E145F2C61009FD1BF /* CoreGraphics.framework */; };
@@ -69,8 +69,8 @@
 		63950095147721AA002F53AF /* PushLinkTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PushLinkTests-Info.plist"; sourceTree = "<group>"; };
 		63950096147721AA002F53AF /* PushTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushTestTests.h; sourceTree = "<group>"; };
 		63950097147721AA002F53AF /* PushTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushTestTests.m; sourceTree = "<group>"; };
-		6399BF91147B5D9E00425CA4 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "PushLink/Icon-114.png"; sourceTree = "<group>"; };
-		6399BF94147C479800425CA4 /* Icon.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; name = Icon.acorn; path = PushLink/Icon.acorn; sourceTree = "<group>"; };
+		6399BF97147C61C500425CA4 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
+		6399BF98147C61C500425CA4 /* Icon.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = Icon.acorn; sourceTree = "<group>"; };
 		63ED9016145F2C61009FD1BF /* PushLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ED901A145F2C61009FD1BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63ED901C145F2C61009FD1BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,11 +144,19 @@
 			path = PushLinkTests;
 			sourceTree = "<group>";
 		};
+		6399BF96147C600A00425CA4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6399BF97147C61C500425CA4 /* Icon-114.png */,
+				6399BF98147C61C500425CA4 /* Icon.acorn */,
+			);
+			path = Images;
+			sourceTree = SOURCE_ROOT;
+		};
 		63ED900B145F2C61009FD1BF = {
 			isa = PBXGroup;
 			children = (
-				6399BF91147B5D9E00425CA4 /* Icon-114.png */,
-				6399BF94147C479800425CA4 /* Icon.acorn */,
+				6399BF96147C600A00425CA4 /* Images */,
 				635D40821477200A00DAE43E /* PushLink */,
 				63950092147721AA002F53AF /* PushLinkTests */,
 				63ED9019145F2C61009FD1BF /* Frameworks */,
@@ -251,8 +259,8 @@
 				635D409B1477200A00DAE43E /* InfoPlist.strings in Resources */,
 				635D409C1477200A00DAE43E /* MainStoryboard.storyboard in Resources */,
 				635D40A31477200A00DAE43E /* PushLink-Info.plist in Resources */,
-				6399BF92147B5D9E00425CA4 /* Icon-114.png in Resources */,
-				6399BF95147C479800425CA4 /* Icon.acorn in Resources */,
+				6399BF99147C61C500425CA4 /* Icon-114.png in Resources */,
+				6399BF9A147C61C500425CA4 /* Icon.acorn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
