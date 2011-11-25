@@ -11,13 +11,13 @@
 
 @implementation HomeViewController
 
-@synthesize fetchedResultsController, passcodeLabel;
+@synthesize fetchedResultsController, passcodeLabel, server;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -32,6 +32,9 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    [self.server addObserver:self forKeyPath:@"passcode" options:0 context:NULL];
+    self.passcodeLabel.text = self.server.passcode;
     [super viewWillAppear:animated];
 }
 
@@ -70,6 +73,16 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if (object == self.server && [keyPath isEqual:@"passcode"]) {
+        self.passcodeLabel.text = self.server.passcode;
+    }
 }
 
 @end

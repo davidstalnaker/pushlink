@@ -10,6 +10,51 @@
 
 @implementation PushlinkServerConnection
 
-@synthesize passcode;
+@synthesize passcode, deviceToken;
+
+- (id)init {
+    if (self = [super init]) {
+        self.passcode = @"test";
+    }
+    return self;
+}
+
+- (void)updatePasscode {
+    NSString *myRequestString = [NSString stringWithFormat: @"token=%@", self.deviceToken];
+    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://pushlink.david-stalnaker.com/register"]];
+    [request setHTTPMethod: @"POST"];
+    [request setHTTPBody: myRequestData];
+    [NSURLConnection asyncRequest:request
+                          success:^(NSData *data, NSURLResponse *response) {
+                              NSError *error;
+                              NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                              dispatch_async( dispatch_get_main_queue(), ^{
+                                  self.passcode = (NSString *)[jsonobj objectForKey:@"passcode"];
+                              });
+                          }
+                          failure:^(NSData *data, NSError *error) {
+                              NSLog(@"Error: %@", error);
+                          }];
+}
+
+- (void)regeneratePasscode {
+    NSString *myRequestString = [NSString stringWithFormat: @"token=%@", self.deviceToken];
+    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://pushlink.david-stalnaker.com/reregister"]];
+    [request setHTTPMethod: @"POST"];
+    [request setHTTPBody: myRequestData];
+    [NSURLConnection asyncRequest:request
+                          success:^(NSData *data, NSURLResponse *response) {
+                              NSError *error;
+                              NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                              dispatch_async( dispatch_get_main_queue(), ^{
+                                  self.passcode = (NSString *)[jsonobj objectForKey:@"passcode"];
+                              });
+                          }
+                          failure:^(NSData *data, NSError *error) {
+                              NSLog(@"Error: %@", error);
+                          }];
+}
 
 @end

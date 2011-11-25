@@ -20,30 +20,15 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize server = __server;
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-    
     NSString *tokenAsString = [[[deviceToken description]
-                                 stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"< >"]] 
-                                stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *myRequestString = [NSString stringWithFormat: @"token=%@", tokenAsString];
-    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://pushlink.david-stalnaker.com/register"]];
-    [request setHTTPMethod: @"POST"];
-    [request setHTTPBody: myRequestData];
-    [NSURLConnection asyncRequest:request
-                          success:^(NSData *data, NSURLResponse *response) {
-                              NSError *error;
-                              NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                              dispatch_async( dispatch_get_main_queue(), ^{
-                                  [self.homeViewController.passcodeLabel setText:(NSString *)[jsonobj objectForKey:@"passcode"]];
-                              });
-                          }
-                          failure:^(NSData *data, NSError *error) {
-                              NSLog(@"Error: %@", error);
-                          }];
-    
+                                stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"< >"]] 
+                               stringByReplacingOccurrencesOfString:@" " withString:@""];
+    self.server.deviceToken = tokenAsString;
+    [self.server updatePasscode];
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
@@ -64,10 +49,12 @@
 {
     
     // Override point for customization after application launch.
+    self.server = [[PushlinkServerConnection alloc] init];
     self.navController = (UINavigationController *)self.window.rootViewController;
     self.homeViewController = (HomeViewController *)self.navController.topViewController;
     self.fetchedResultsController = [[HistoryFetchedResultsController alloc] initWithManagedObjectContext:self.managedObjectContext];
     self.homeViewController.fetchedResultsController = self.fetchedResultsController;
+    self.homeViewController.server = self.server;
     
     // Let the device know we want to receive push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
 #import "HistoryFetchedResultsController.h"
+#import "PushlinkServerConnection.h"
 
 @interface DSAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +21,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) HistoryFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) PushlinkServerConnection *server;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

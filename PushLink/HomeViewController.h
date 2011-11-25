@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoryFetchedResultsController.h"
+#import "PushlinkServerConnection.h"
 
 @interface HomeViewController : UIViewController
 
 @property(strong, nonatomic) HistoryFetchedResultsController *fetchedResultsController;
 @property(strong, nonatomic) IBOutlet UILabel *passcodeLabel;
+@property(strong, nonatomic) PushlinkServerConnection *server;
 
 @end
