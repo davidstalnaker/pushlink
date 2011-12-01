@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PushlinkServerConnection.h"
 
-@interface SettingsViewController : UITableViewController
+@interface SettingsViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *regeneratePasscodeLabel;
-@property (weak, nonatomic) IBOutlet UITableViewCell *passcodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passcodeLabel;
+@property (strong, nonatomic) PushlinkServerConnection *server;
+- (IBAction)regeneratePasscode:(id)sender;
 
 @end

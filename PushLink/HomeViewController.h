@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HistoryFetchedResultsController.h"
 #import "PushlinkServerConnection.h"
+#import "SettingsViewController.h"
 
 @interface HomeViewController : UIViewController
 

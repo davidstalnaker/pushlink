@@ -43,6 +43,9 @@
     if ([[segue identifier] isEqualToString:@"viewHistory"]) {
         ((HistoryViewController*)[segue destinationViewController]).fetchedResultsController = self.fetchedResultsController;
     }
+    else if ([[segue identifier] isEqualToString:@"viewSettings"]) {
+        ((SettingsViewController*)[segue destinationViewController]).server = self.server;
+    }
 }
 
 #pragma mark - View lifecycle
