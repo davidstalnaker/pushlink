@@ -40,9 +40,19 @@
     // Clear notification center
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    NSString* launchUrl = [userInfo valueForKey:@"url"];
-    [self.fetchedResultsController insertLink:launchUrl];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
+    NSString* launchUrl = [userInfo objectForKey:@"url"];
+    if (launchUrl) {
+        [self.fetchedResultsController insertLink:launchUrl];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
+    }
+    else {
+        NSString* urlId = [userInfo objectForKey:@"url_id"];
+        [PushlinkServerConnection getUrlFromId:urlId withCallback:^(NSString *url) {
+            [self.fetchedResultsController insertLink:url];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
+        }];
+    }
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

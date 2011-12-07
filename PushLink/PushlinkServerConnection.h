@@ -16,5 +16,6 @@
 
 - (void)updatePasscode;
 - (void)regeneratePasscode;
++ (void)getUrlFromId:(NSString *)urlId withCallback:(void (^)(NSString *url))callback;
 
 @end

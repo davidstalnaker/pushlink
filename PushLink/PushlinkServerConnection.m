@@ -19,6 +19,22 @@
     return self;
 }
 
++ (void)getUrlFromId:(NSString *)urlId withCallback:(void (^)(NSString *url))callback {
+    NSString *urlString = [NSString stringWithFormat: @"http://pushlink.david-stalnaker.com/getUrl?url_id=%@", urlId];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [NSURLConnection asyncRequest:request
+                          success:^(NSData *data, NSURLResponse *response) {
+                              NSError *error;
+                              NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                              NSString *url = (NSString *)[jsonobj objectForKey:@"url"];
+                              callback(url);
+                          }
+                          failure:^(NSData *data, NSError *error) {
+                              NSLog(@"Error: %@", error);
+                          }];
+}
+
+
 - (void)updatePasscode {
     NSString *myRequestString = [NSString stringWithFormat: @"token=%@", self.deviceToken];
     NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
