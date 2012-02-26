@@ -38,18 +38,18 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // Clear notification center
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [application setApplicationIconBadgeNumber:1];
+    [application setApplicationIconBadgeNumber:0];
     NSString* launchUrl = [userInfo objectForKey:@"url"];
     if (launchUrl) {
         [self.fetchedResultsController insertLink:launchUrl];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
+        [application openURL:[NSURL URLWithString: launchUrl]];
     }
     else {
         NSString* urlId = [userInfo objectForKey:@"url_id"];
         [PushlinkServerConnection getUrlFromId:urlId withCallback:^(NSString *url) {
             [self.fetchedResultsController insertLink:url];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
+            [application openURL:[NSURL URLWithString: url]];
         }];
     }
     
@@ -69,6 +69,12 @@
     // Let the device know we want to receive push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    NSDictionary *notification = (NSDictionary *)[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification != nil) {
+        [self application:[UIApplication sharedApplication] didReceiveRemoteNotification:notification];
+    }
+    
     
     return YES;
 }
